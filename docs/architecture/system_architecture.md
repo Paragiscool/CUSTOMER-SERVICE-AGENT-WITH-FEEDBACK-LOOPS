@@ -18,22 +18,30 @@ The NexBank Agentic AI Customer Service system follows a modular, distributed mi
 
 The Dialogue Management Engine operates on a deterministic state machine overlaid with probabilistic intent transitions.
 
-### Core States
-- `INIT`: Session started, awaiting initial user input or authentication.
-- `AUTHENTICATING`: Verifying user identity (OTP, Biometric) based on intent requirements.
-- `CLARIFYING`: Ambiguous input detected; actively seeking disambiguation from the user.
-- `SLOT_FILLING`: Collecting required entities (e.g., account number, amount) to fulfill an intent.
-- `RETRIEVING_KNOWLEDGE`: Querying the KB for relevant information.
-- `GENERATING_RESPONSE`: Formulating the response payload.
-- `ESCALATING`: Handing off to a human agent.
-- `RESOLVED`: Intent fulfilled successfully.
-- `TERMINATED`: Session timed out, completed, or hard-stopped due to safety violation.
+### Core States (16 Total: S0–S15)
+- `S0_INIT`: Session started, awaiting channel handshake.
+- `S1_GREETING`: Welcome message sent, awaiting first customer input.
+- `S2_AUTHENTICATING`: Verifying user identity (OTP, Biometric, KYC) based on intent requirements.
+- `S3_INTENT_CLASSIFICATION`: NLU Pipeline is classifying the user's message.
+- `S4_SLOT_FILLING`: Collecting required entities (e.g., account number, amount) to fulfill an intent.
+- `S5_DISAMBIGUATION`: Ambiguous input detected; actively seeking clarification from the user.
+- `S6_KNOWLEDGE_RETRIEVAL`: Querying the KB for relevant information.
+- `S7_RESPONSE_GENERATION`: Formulating the response payload via template or LLM.
+- `S8_GUARDRAIL_CHECK`: Validating the generated response against safety rules.
+- `S9_AWAITING_CUSTOMER`: Response delivered, waiting for next customer message.
+- `S10_ESCALATION`: Preparing handoff context and routing to appropriate agent queue.
+- `S11_HUMAN_HANDOFF`: Conversation transferred to a human agent.
+- `S12_FEEDBACK_COLLECTION`: Post-resolution CSAT collection (1-5 rating + optional text).
+- `S13_SESSION_CLOSED`: Conversation ended, audit log finalised.
+- `S14_SESSION_TIMEOUT`: 5 minutes of inactivity detected; session frozen pending re-authentication.
+- `S15_ERROR_RECOVERY`: Component failure detected; applying fallback strategy.
 
-### State Transitions & Guards
-- `INIT` -> `AUTHENTICATING`: **Guard**: Intent detected requires higher auth level than current session.
-- `SLOT_FILLING` -> `GENERATING_RESPONSE`: **Guard**: All mandatory entities for the active intent are successfully extracted and validated.
-- `*` -> `ESCALATING`: **Guard**: Sentiment score drops below -0.6 OR NLU confidence < threshold for 2 consecutive turns OR explicit human request OR priority intent detected.
-- `*` -> `TERMINATED`: **Guard**: 5 minutes of inactivity OR critical security violation detected (e.g., repeated prompt injection attempts).
+### State Transitions & Guards (Key Examples)
+- `S3_INTENT_CLASSIFICATION` -> `S2_AUTHENTICATING`: **Guard**: Intent detected requires higher auth level than current session.
+- `S4_SLOT_FILLING` -> `S6_KNOWLEDGE_RETRIEVAL`: **Guard**: All mandatory entities for the active intent are successfully extracted and validated.
+- `S8_GUARDRAIL_CHECK` -> `S10_ESCALATION`: **Guard**: Critical safety violation detected (financial advice, PII leak, hallucination).
+- `*` -> `S10_ESCALATION`: **Guard**: Sentiment score drops below -0.6 OR NLU confidence < threshold for 3 consecutive turns OR explicit `GEN-004` (Human Handoff Request) intent detected.
+- `*` -> `S14_SESSION_TIMEOUT`: **Guard**: 5 minutes of inactivity OR critical security violation detected (e.g., repeated prompt injection attempts).
 
 ### Multi-Turn Reasoning Strategy
 - **Context Window**: Maintains last 20 turns in active memory.
@@ -58,10 +66,10 @@ All internal communications occur via gRPC/REST over TLS 1.3 using strictly vali
 **Output (to Dialogue Engine):**
 ```json
 {
-  "primary_intent": {"label": "security", "confidence": 0.98},
-  "secondary_intent": {"label": "card_blocking", "confidence": 0.95},
+  "primary_intent": {"label": "CRD-001", "display": "Block/Unblock Card", "confidence": 0.95},
+  "secondary_intent": {"label": "SEC-001", "display": "Report Fraud", "confidence": 0.82},
   "entities": [
-    {"type": "card_number_partial", "value": "4567", "confidence": 0.99, "validated": true}
+    {"type": "card_last_4", "value": "4567", "confidence": 0.99, "validated": true}
   ],
   "sentiment": {"score": -0.4, "emotion": "urgency"},
   "out_of_scope": false
@@ -81,15 +89,18 @@ All internal communications occur via gRPC/REST over TLS 1.3 using strictly vali
 
 To ensure a seamless conversational experience, the system enforces a strict 3,000ms latency budget at the 95th percentile.
 
-- **Gateway & Network Overhead**: 100ms
-- **Dialogue Engine Processing**: 50ms
-- **NLU Pipeline (Intent + Entities + Sentiment)**: 450ms
-- **Guardrail Pre-Check**: 100ms
-- **Knowledge Retrieval / API Fetch**: 200ms
-- **Response Generation (LLM/Hybrid)**: 1,800ms
-- **Guardrail Post-Check**: 150ms
-- **Audit Logging (Async)**: 0ms (Non-blocking)
-- **Total Budget**: 2,850ms (leaves 150ms buffer)
+| Stage | Component | Budget (p95) |
+| :--- | :--- | :--- |
+| 1 | C1: Gateway Input (session lookup, language detection) | 50ms |
+| 2 | C6: Input Guardrails (prompt injection scan, PII check) | 50ms (parallel with NLU) |
+| 3 | C2: NLU Pipeline (intent + entities + sentiment) | 500ms |
+| 4 | C3: Dialogue Policy (state transition, slot check) | 50ms |
+| 5 | C4: Knowledge Retrieval (hybrid dense + BM25 + re-rank) | 200ms |
+| 6 | C5: Response Generation (template or LLM) | 1,500ms |
+| 7 | C6: Output Guardrails (hallucination, PII, advice check) | 100ms |
+| 8 | C1: Gateway Output (format, deliver) | 50ms |
+| — | C9: Audit Logging (async, fire-and-forget) | 0ms (non-blocking) |
+| **Total** | **End-to-End (p95)** | **2,500ms** (500ms buffer) |
 
 ## 6. Scalability Specifications
 

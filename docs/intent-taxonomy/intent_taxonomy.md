@@ -1,6 +1,6 @@
 # Intent Taxonomy Specification
 
-This document defines the 32 hierarchical intent categories for the NexBank Agentic AI system, covering the full spectrum of customer interactions. 
+This document defines the **37 hierarchical intent categories** for the NexBank Agentic AI system, covering the full spectrum of customer interactions across 7 primary domains.
 
 ## 1. Account Management (ACC)
 

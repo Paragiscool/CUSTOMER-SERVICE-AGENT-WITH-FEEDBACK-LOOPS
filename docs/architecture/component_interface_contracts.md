@@ -41,11 +41,11 @@ The DME forwards the sanitised text and current context to the NLU Pipeline for 
 ```json
 {
   "primary_intent": {
-    "label": "account.balance_check",
+    "label": "ACC-001",
     "confidence": 0.94
   },
   "secondary_intent": {
-    "label": "account.statement_request",
+    "label": "ACC-002",
     "confidence": 0.42
   },
   "entities": [
@@ -96,7 +96,7 @@ When the intent requires factual data, DME queries the KB.
 ```json
 {
   "query": "savings account balance check",
-  "intent": "account.balance_check",
+  "intent": "ACC-001",
   "auth_level": "otp",
   "top_k": 3
 }
@@ -129,7 +129,7 @@ DME instructs the RGE to formulate the final response.
 {
   "session_id": "uuid",
   "turn_id": "uuid",
-  "intent": "account.balance_check",
+  "intent": "ACC-001",
   "generation_method": "template",
   "template_id": "TMPL-ACC-BAL-001",
   "variables": {
@@ -188,7 +188,7 @@ If criteria are met, the DME triggers a handoff.
   "trigger_condition": "low_sentiment",
   "priority": "P2",
   "conversation_summary": "Customer frustrated about a missing transaction of ₹5000.",
-  "current_intent": "transaction.dispute"
+  "current_intent": "TXN-002"
 }
 ```
 
@@ -213,7 +213,7 @@ Components asynchronously fire log events to the logging service.
   "turn_id": "uuid",
   "timestamp": "ISO-8601",
   "data": {
-    "intent_classified": "account.balance_check",
+    "intent_classified": "ACC-001",
     "guardrails_triggered": [],
     "latency_ms": 2450
   }
