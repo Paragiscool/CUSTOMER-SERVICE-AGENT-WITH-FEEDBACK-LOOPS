@@ -12,7 +12,7 @@ A production-grade, self-improving agentic AI customer service system designed f
 | Guardrails & Safety | 9-10 | ✅ Complete | Advice guardrails, 60 adversarial test cases |
 | Continuous Learning | 11 | ✅ Complete | 5-stage pipeline, CSAT loops, A/B deployment simulator |
 | Escalation & Prompts | 12-13 | ✅ Complete | 15 escalation triggers, 20 metrics, 3 dashboards, 6-layer prompt, 16 templates |
-| Finalization | 14-15 | 🔲 Pending | Sample conversations, audit spec, risk matrix |
+| Finalization | 14-15 | ✅ Complete | 21 sample conversations, audit spec, risk matrix |
 
 ## Repository Structure
 
@@ -30,7 +30,12 @@ A production-grade, self-improving agentic AI customer service system designed f
 │   │   ├── retrieval_pipeline.md           # Hybrid BM25 + Dense retrieval with RRF
 │   │   ├── security_matrix.md              # Access Control Matrix & PII Ingestion Gate
 │   │   └── knowledge_maintenance.md        # RBI circular update pipeline & sign-off protocol
-│   ├── guardrails/
+│   ├── compliance/
+│   │   ├── audit_logging_spec.md           # Turn/Session log schema, encryption, DPDP rules
+│   │   └── risk_assessment_matrix.md       # Technical, Business, and Ethical risk mapping
+│   ├── conversations/
+│   │   ├── design_patterns.md              # 5 mandatory patterns, 8 anti-patterns, tone spec
+│   │   └── sample_conversations.md         # 21 end-to-end sample flows with logging metadata
 │   │   ├── financial_advice_boundaries.md  # 3-Layer Safety Guard (info vs. advice)
 │   │   ├── adversarial_defenses.md         # Sandwich Architecture for 6 attack vectors
 │   │   ├── account_security_guardrails.md  # 8 mandatory account security rules
