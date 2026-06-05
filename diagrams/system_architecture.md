@@ -1,98 +1,81 @@
 # NexBank Agentic AI — System Architecture Diagrams
 
-## 1. High-Level System Architecture
+## 1. End-to-End System Topology (Architecture)
 
 ```mermaid
 graph TB
-    subgraph CHANNELS["📱 Customer Channels"]
-        MA["Mobile App"]
-        WC["Web Chat"]
-        WA["WhatsApp Business"]
-        IVR["IVR / Voice"]
+    %% STYLING
+    classDef client fill:#2d3436,stroke:#636e72,color:#fff,rx:5px,ry:5px
+    classDef gateway fill:#1a1a2e,stroke:#e94560,color:#fff,stroke-width:2px
+    classDef guardrail fill:#c0392b,stroke:#e74c3c,color:#fff,stroke-width:2px,stroke-dasharray: 5 5
+    classDef nlu fill:#0f3460,stroke:#533483,color:#fff
+    classDef core fill:#533483,stroke:#9b59b6,color:#fff,stroke-width:2px
+    classDef rag fill:#27ae60,stroke:#2ecc71,color:#fff
+    classDef llm fill:#d35400,stroke:#e67e22,color:#fff
+    classDef audit fill:#7f8c8d,stroke:#95a5a6,color:#fff
+    
+    %% NODES & SUBGRAPHS
+    subgraph CLIENT_EDGE ["Client Edge"]
+        APP(Mobile App) ::: client
+        WEB(Web Chat) ::: client
+        WA(WhatsApp) ::: client
     end
 
-    subgraph LAYER1["LAYER 1: Channel & Gateway"]
-        GW["C1: User Interface Gateway<br/>━━━━━━━━━━━━━━━━━━━<br/>• Channel Normalisation<br/>• Session Management<br/>• Rate Limiting & DDoS<br/>• TLS Termination<br/>• Language Detection"]
+    subgraph INGRESS_LAYER ["Ingress & Pre-Flight Security"]
+        GW["API Gateway (C1)<br/>Rate Limits & TLS 1.3"] ::: gateway
+        PRE_GR["Pre-Flight Guardrail (C6a)<br/>PII Ingestion Gate & Base64 Scrubber"] ::: guardrail
     end
 
-    subgraph LAYER2["LAYER 2: Understanding"]
-        NLU["C2: NLU Pipeline<br/>━━━━━━━━━━━━━━━━━━━<br/>• 3-Tier Intent Classification<br/>• Entity Extraction & Validation<br/>• Sentiment Analysis<br/>• Multi-Intent Detection<br/>• Out-of-Scope Detection"]
-        DME["C3: Dialogue Management Engine<br/>━━━━━━━━━━━━━━━━━━━<br/>• State Machine (16 states)<br/>• Slot-Filling Orchestration<br/>• Policy Decision (Hybrid)<br/>• Multi-Turn Reasoning<br/>• Context Window Mgmt"]
+    subgraph ORCHESTRATION ["Core Orchestration"]
+        DME{"Dialogue Management<br/>Engine (C3)"} ::: core
     end
 
-    subgraph LAYER3["LAYER 3: Action & Generation"]
-        KB["C4: Knowledge Base & Retrieval<br/>━━━━━━━━━━━━━━━━━━━<br/>• Hybrid Retrieval (Dense+Sparse)<br/>• Cross-Encoder Re-Ranking<br/>• Access Control Matrix<br/>• Version Control & TTL<br/>• p95 < 200ms"]
-        RG["C5: Response Generation<br/>━━━━━━━━━━━━━━━━━━━<br/>• Template-Based (Safety-Critical)<br/>• LLM-Based (Conversational)<br/>• Hybrid Blending Layer<br/>• Multi-Language Support<br/>• Persona Enforcement"]
-        GR["C6: Guardrail & Safety Engine<br/>━━━━━━━━━━━━━━━━━━━<br/>• Input Guardrails (Injection, PII)<br/>• Processing Guardrails (Auth, Advice)<br/>• Output Guardrails (Hallucination)<br/>• IMMUTABLE Safety Layer<br/>• 8 Mandatory Security Rules"]
-        ER["C7: Escalation Router<br/>━━━━━━━━━━━━━━━━━━━<br/>• 15 Trigger Conditions<br/>• Priority Classification (P0-P3)<br/>• 8-Element Handoff Protocol<br/>• Queue Management<br/>• De-Escalation Logic"]
+    subgraph PARALLEL_NLU ["Parallel NLU Processing (C2)"]
+        direction LR
+        INTENT["Intent Classifier<br/>(37 Domains)"] ::: nlu
+        ENTITY["Entity Extractor<br/>(15 Slot Types)"] ::: nlu
+        SENTIMENT["Sentiment Analyzer<br/>(Threshold: -0.7)"] ::: nlu
     end
 
-    subgraph LAYER4["LAYER 4: Platform & Intelligence"]
-        CL["C8: Continuous Learning Pipeline<br/>━━━━━━━━━━━━━━━━━━━<br/>• Supervisor Corrections<br/>• CSAT Signal Integration<br/>• Resolution Outcome Tracking<br/>• Safety-Preserving Updates<br/>• A/B Testing Framework"]
-        AL["C9: Audit & Logging Service<br/>━━━━━━━━━━━━━━━━━━━<br/>• Immutable Event Log<br/>• Compliance Metadata<br/>• 7-Year Retention (Financial)<br/>• Tamper-Proof Storage (WORM)<br/>• Real-Time Dashboards"]
+    subgraph RAG_PIPELINE ["Hybrid RAG Pipeline (C4)"]
+        direction LR
+        SPARSE[(BM25 Sparse)] ::: rag
+        DENSE[(Vector DB Dense)] ::: rag
+        FUSION["Reciprocal Rank Fusion<br/>(RRF k=60)"] ::: rag
     end
 
-    subgraph AGENTS["👤 Human Agent Teams"]
-        FI["Fraud Investigation"]
-        SR["Senior Resolution Mgr"]
-        CR["Customer Retention"]
-        GS["General Support"]
+    subgraph GENERATION_EGRESS ["Generation & Post-Flight"]
+        INFERENCE["LLM Inference Engine (C5)<br/>Temperature = 0.3"] ::: llm
+        POST_GR["Post-Flight Validator (C6b)<br/>Semantic Output Scanner"] ::: guardrail
     end
 
-    subgraph DATA["💾 Data Layer"]
-        REDIS["Redis Cluster<br/>Session State & Cache"]
-        PG["PostgreSQL<br/>Conversation History"]
-        VDB["Qdrant / Weaviate<br/>Vector Embeddings"]
-        ES["Elasticsearch<br/>Sparse Retrieval & Logs"]
-        KAFKA["Apache Kafka<br/>Event Streaming"]
-        S3["Object Storage (WORM)<br/>Audit Archival"]
+    subgraph ESCALATION_AUDIT ["Safety & Compliance"]
+        ESC["Escalation Router (C7)<br/>(15 Triggers, SLAs)"] ::: guardrail
+        AUDIT[("Encrypted Audit Ledger (C9)<br/>AES-256 / WORM Storage")] ::: audit
     end
 
-    MA --> GW
-    WC --> GW
-    WA --> GW
-    IVR --> GW
-
-    GW -->|"Normalised Message"| GR
-    GR -->|"Sanitised Input"| NLU
-    NLU -->|"Intent + Entities + Sentiment"| DME
-    DME -->|"Retrieval Query"| KB
-    KB -->|"Knowledge Results"| DME
-    DME -->|"Generation Request"| RG
-    RG -->|"Generated Response"| GR
-    GR -->|"Validated Response"| GW
-    DME -->|"Escalation Trigger"| ER
-    ER --> FI
-    ER --> SR
-    ER --> CR
-    ER --> GS
-
-    DME --> REDIS
-    DME --> PG
-    KB --> VDB
-    KB --> ES
-    AL --> KAFKA
-    AL --> S3
-    CL --> KAFKA
-
-    NLU -.->|"Log"| AL
-    DME -.->|"Log"| AL
-    KB -.->|"Log"| AL
-    RG -.->|"Log"| AL
-    GR -.->|"Log"| AL
-    ER -.->|"Log"| AL
-
-    CL -.->|"Model Updates"| NLU
-    CL -.->|"Template Updates"| RG
-    CL -.->|"Rule Updates (non-safety)"| GR
-
-    style LAYER1 fill:#1a1a2e,stroke:#16213e,color:#e0e0e0
-    style LAYER2 fill:#16213e,stroke:#0f3460,color:#e0e0e0
-    style LAYER3 fill:#0f3460,stroke:#533483,color:#e0e0e0
-    style LAYER4 fill:#533483,stroke:#e94560,color:#e0e0e0
-    style DATA fill:#0d1117,stroke:#30363d,color:#e0e0e0
-    style CHANNELS fill:#2d3436,stroke:#636e72,color:#e0e0e0
-    style AGENTS fill:#2d3436,stroke:#636e72,color:#e0e0e0
+    %% RELATIONSHIPS & FLOW
+    CLIENT_EDGE -->|"Raw Payload (JSON)"| GW
+    GW -->|"Normalized Payload"| PRE_GR
+    
+    PRE_GR -- "Sanitized Text" --> DME
+    PRE_GR -. "PII Scrub Event" .-> AUDIT
+    
+    DME -->|"Async Dispatch"| PARALLEL_NLU
+    INTENT & ENTITY & SENTIMENT -->|"Aggregated Context"| DME
+    
+    DME -->|"Query Condition Meets 'KB_Required'"| RAG_PIPELINE
+    RAG_PIPELINE -->|"Top-3 Chunks (Score >= τ)"| DME
+    
+    DME -->|"Structured Context + History"| INFERENCE
+    INFERENCE -->|"Raw LLM Completion"| POST_GR
+    
+    POST_GR -->|"Clean Response (Latency < 2.5s)"| GW
+    POST_GR -. "Financial Advice Detected!" .-> ESC
+    
+    DME -. "Sentiment < -0.7" .-> ESC
+    
+    GW & DME & INFERENCE & ESC -. "Async Event Stream (Kafka)" .-> AUDIT
 ```
 
 ---
@@ -164,61 +147,55 @@ sequenceDiagram
 
 ---
 
-## 3. Dialogue State Machine
+## 3. Complex Dialogue State Machine (State Management)
 
 ```mermaid
 stateDiagram-v2
-    [*] --> S0_INIT: Customer connects
+    %% STATE STYLES
+    classDef initial fill:#2d3436,stroke:#636e72
+    classDef auth fill:#f39c12,stroke:#e67e22,color:#fff
+    classDef active fill:#2980b9,stroke:#3498db,color:#fff
+    classDef block fill:#c0392b,stroke:#e74c3c,color:#fff
+    classDef endstate fill:#27ae60,stroke:#2ecc71,color:#fff
 
-    S0_INIT --> S1_GREETING: Session created
+    [*] --> Idle : Connect
+    
+    state "Idle (Session Initiated)" as Idle ::: initial
+    state "Authenticated_Check" as AuthCheck ::: auth
+    state "Intent_Processing (NLU)" as IntentProcessing ::: active
+    state "Slot_Filling_Active" as SlotFilling ::: active
+    state "Context_Carryover" as ContextCarry ::: active
+    state "KB_Query (RAG)" as KBQuery ::: active
+    state "Guardrail_Triggered" as Guardrail ::: block
+    state "Human_Escalation_Queue" as Escalation ::: block
+    state "Session_Teardown" as Teardown ::: endstate
 
-    S1_GREETING --> S3_INTENT_CLASSIFICATION: First message received
-    S1_GREETING --> S14_SESSION_TIMEOUT: 5 min inactivity
+    Idle --> AuthCheck : Input Detected [Timeout = 5m]
+    
+    AuthCheck --> ContextCarry : [Valid Auth Token & Recent History]
+    AuthCheck --> IntentProcessing : [Auth Level Matches Required]
+    AuthCheck --> Guardrail : [Auth Level Insufficient for Action]
 
-    S3_INTENT_CLASSIFICATION --> S2_AUTHENTICATING: Auth upgrade needed
-    S3_INTENT_CLASSIFICATION --> S4_SLOT_FILLING: Missing required entities
-    S3_INTENT_CLASSIFICATION --> S5_DISAMBIGUATION: Ambiguous intent
-    S3_INTENT_CLASSIFICATION --> S6_KNOWLEDGE_RETRIEVAL: Intent clear, slots filled
-    S3_INTENT_CLASSIFICATION --> S10_ESCALATION: Low confidence 3+ turns
-    S3_INTENT_CLASSIFICATION --> S15_ERROR_RECOVERY: NLU service error
+    ContextCarry --> IntentProcessing : Merge History
 
-    S2_AUTHENTICATING --> S3_INTENT_CLASSIFICATION: Auth success
-    S2_AUTHENTICATING --> S10_ESCALATION: Auth failed 3x
+    IntentProcessing --> SlotFilling : [Entities Missing (Confidence > 0.85)]
+    IntentProcessing --> KBQuery : [All Entities Gathered]
+    IntentProcessing --> Guardrail : [NLU Detects Banned Topic]
+    IntentProcessing --> Escalation : [TurnCounter > 3 w/ Low Confidence]
 
-    S4_SLOT_FILLING --> S6_KNOWLEDGE_RETRIEVAL: All slots filled
-    S4_SLOT_FILLING --> S9_AWAITING_CUSTOMER: Slot prompt sent
-    S4_SLOT_FILLING --> S10_ESCALATION: 3 failed attempts
+    SlotFilling --> IntentProcessing : Entity Provided
+    SlotFilling --> Escalation : [Failed to Fill Slot > 3x]
 
-    S5_DISAMBIGUATION --> S3_INTENT_CLASSIFICATION: Clarification received
-    S5_DISAMBIGUATION --> S10_ESCALATION: 2 failed attempts
+    KBQuery --> Guardrail : [RRF Score < τ_rerank]
+    KBQuery --> IntentProcessing : [KB Retrieved Successfully]
 
-    S6_KNOWLEDGE_RETRIEVAL --> S7_RESPONSE_GENERATION: Knowledge retrieved
-    S6_KNOWLEDGE_RETRIEVAL --> S15_ERROR_RECOVERY: KB service error
+    Guardrail --> IntentProcessing : [Sanitized / Handled via Template]
+    Guardrail --> Escalation : [Critical Violation / Sentiment < -0.7]
 
-    S7_RESPONSE_GENERATION --> S8_GUARDRAIL_CHECK: Response generated
+    Escalation --> Teardown : Transfer Payload to Human
+    IntentProcessing --> Teardown : Task Resolved
 
-    S8_GUARDRAIL_CHECK --> S9_AWAITING_CUSTOMER: All checks PASS
-    S8_GUARDRAIL_CHECK --> S7_RESPONSE_GENERATION: Non-critical fail (retry)
-    S8_GUARDRAIL_CHECK --> S10_ESCALATION: Critical safety violation
-
-    S9_AWAITING_CUSTOMER --> S3_INTENT_CLASSIFICATION: New message
-    S9_AWAITING_CUSTOMER --> S14_SESSION_TIMEOUT: 5 min inactivity
-    S9_AWAITING_CUSTOMER --> S12_FEEDBACK_COLLECTION: Issue resolved
-
-    S10_ESCALATION --> S11_HUMAN_HANDOFF: Handoff prepared
-    S10_ESCALATION --> S15_ERROR_RECOVERY: No agents available
-
-    S11_HUMAN_HANDOFF --> S13_SESSION_CLOSED: Agent closes conversation
-
-    S12_FEEDBACK_COLLECTION --> S13_SESSION_CLOSED: Feedback collected/skipped
-
-    S14_SESSION_TIMEOUT --> S2_AUTHENTICATING: Customer returns
-    S14_SESSION_TIMEOUT --> S13_SESSION_CLOSED: No return in 24h
-
-    S15_ERROR_RECOVERY --> S9_AWAITING_CUSTOMER: Fallback sent
-    S15_ERROR_RECOVERY --> S10_ESCALATION: Error persists
-
-    S13_SESSION_CLOSED --> [*]: Audit log finalised
+    Teardown --> [*] : Commit to Audit Ledger
 ```
 
 ---

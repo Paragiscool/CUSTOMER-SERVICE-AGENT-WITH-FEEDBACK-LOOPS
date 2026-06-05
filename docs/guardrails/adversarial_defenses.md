@@ -4,9 +4,44 @@ To secure the NexBank Agentic AI, we cannot rely solely on the primary LLM being
 
 ## 1. Core Security Architecture
 
-- **Pre-Flight Layer**: A fast, deterministic input sanitization and classification layer before the prompt hits the primary LLM.
-- **Primary Execution Layer**: The core LLM, operating with strict system prompts and the Principle of Least Privilege for tool access.
-- **Post-Flight Layer**: An output evaluation guardrail that analyzes the generated response for policy violations before returning it to the user.
+```mermaid
+flowchart LR
+    %% STYLING
+    classDef external fill:#2c3e50,stroke:#34495e,color:#fff
+    classDef preflight fill:#e67e22,stroke:#d35400,color:#fff
+    classDef execution fill:#2980b9,stroke:#3498db,color:#fff
+    classDef postflight fill:#27ae60,stroke:#2ecc71,color:#fff
+    
+    RAW["Raw Inbound Payload<br/>(User Turn)"] ::: external
+    
+    subgraph PRE_FLIGHT ["Pre-Flight Guardrails (Sanitization)"]
+        direction TB
+        NORM["Normalization Layer<br/>(Base64 Decode, Strip Leetspeak)"] ::: preflight
+        PII["PII Masking Filter<br/>(Aadhaar/PAN Regex)"] ::: preflight
+        POLICY["Intent Policy Boundary Check<br/>(Jailbreak / Prompt Injection Scanner)"] ::: preflight
+    end
+    
+    EXEC["LLM Execution Context<br/>(Isolated Memory Sandbox)"] ::: execution
+    
+    subgraph POST_FLIGHT ["Post-Flight Guardrails (Validation)"]
+        direction TB
+        SEMANTIC["Semantic Scanner<br/>(Regex + Embeddings)"] ::: postflight
+        ADVICE_CHECK["Prohibited Financial<br/>Advice Filter"] ::: postflight
+    end
+    
+    SAFE["Final Safe Output<br/>(To User)"] ::: external
+    
+    RAW --> NORM
+    NORM --> PII
+    PII --> POLICY
+    POLICY -->|"Clean Input"| EXEC
+    EXEC -->|"Raw Generation"| SEMANTIC
+    SEMANTIC --> ADVICE_CHECK
+    ADVICE_CHECK -->|"Approved"| SAFE
+    
+    POLICY -.->|"Blocked!"| ESCALATE["Deflect / Escalate"] ::: external
+    ADVICE_CHECK -.->|"Blocked!"| ESCALATE
+```
 
 ## 2. Adversarial Vectors & Architectural Defenses
 
