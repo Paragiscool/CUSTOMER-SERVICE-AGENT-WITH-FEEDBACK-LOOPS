@@ -11,7 +11,7 @@ A production-grade, self-improving agentic AI customer service system designed f
 | Knowledge Base & Retrieval | 7-8 | ✅ Complete | KB schema, 55 entries, hybrid retrieval pipeline |
 | Guardrails & Safety | 9-10 | ✅ Complete | Advice guardrails, 60 adversarial test cases |
 | Continuous Learning | 11 | ✅ Complete | 5-stage pipeline, CSAT loops, A/B deployment simulator |
-| Escalation & Prompts | 12-13 | 🔲 Pending | Routing logic, CSAT framework, system prompts |
+| Escalation & Prompts | 12-13 | ✅ Complete | 15 escalation triggers, 20 metrics, 3 dashboards, 6-layer prompt, 16 templates |
 | Finalization | 14-15 | 🔲 Pending | Sample conversations, audit spec, risk matrix |
 
 ## Repository Structure
@@ -41,8 +41,15 @@ A production-grade, self-improving agentic AI customer service system designed f
 │   │   ├── learning_architecture.md        # 5-stage closed-loop improvement cycle
 │   │   ├── feedback_integration.md         # CSAT, implicit signals & supervisor taxonomy
 │   │   └── safety_invariant_protocol.md    # Immutable safety layer & 200-case Air Gap
-│   ├── escalation/                         # (Days 12-13)
-│   └── metrics/                            # (Days 12-13)
+│   ├── escalation/
+│   │   ├── escalation_routing.md           # 15 triggers, decision tree, 8-element handoff
+│   │   └── escalation_quality_metrics.md   # Efficiency, appropriateness & load metrics
+│   ├── metrics/
+│   │   ├── csat_metrics_framework.md       # 20 KPIs (leading, lagging, operational)
+│   │   └── dashboard_wireframes.md         # 3 dashboard specs (Real-time, Daily, Weekly)
+│   └── system-prompt/
+│       ├── prompt_architecture.md          # 6-layer architecture with immutability rules
+│       └── prompt_templates.md             # 16 prompt templates with trigger conditions
 ├── diagrams/
 │   └── system_architecture.md              # 6 Mermaid diagrams (architecture, state machine, flows)
 ├── config/

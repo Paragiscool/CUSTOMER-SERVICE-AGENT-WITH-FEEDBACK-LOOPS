@@ -1,5 +1,33 @@
 # Project Changelog
 
+## Days 12-13 — Escalation, Satisfaction & System Prompt Design
+**Date:** 2026-06-05
+**Focus:** Routing logic, metrics framework, and prompt architecture.
+
+### Work Completed
+- Finalized **15 Escalation Trigger Conditions** (ESC-001 through ESC-015) with Priority (P0/P1/P2), Target Queue, and SLA times.
+- Designed **Routing Decision Logic** with a Mermaid decision tree, an **8-Element Handoff Protocol**, Queue Management (overflow, after-hours, priority preemption), and **De-Escalation Logic** for P2 triggers.
+- Defined **Escalation Quality Metrics** covering efficiency (time-to-pickup), appropriateness (unnecessary escalation rate), and operational load.
+- Built a comprehensive **CSAT Metrics Framework** with 20 KPIs across Leading (7), Lagging (7), and Operational (6) categories.
+- Specified the **6-Stage Closed-Loop Improvement Cycle** (Detect → Diagnose → Design → Deploy → Validate → Document).
+- Designed **3 Dashboard Wireframes** (Real-Time Operations, Daily Performance, Weekly Strategic) with ASCII art layouts.
+- Architected the **6-Layer System Prompt** with immutability rules ensuring Layers 0-2 (Identity, Safety, Regulatory) cannot be modified by the learning pipeline.
+- Created a library of **16 Prompt Templates** (PT-01 through PT-16) with trigger conditions covering greeting, authentication, slot-filling, disambiguation, advice deflection, escalation handoff, crisis response, and more.
+- Documented **8 Tunable Configuration Parameters** with defaults, ranges, owners, and change approval processes.
+
+### Deliverables Produced
+- `docs/escalation/escalation_routing.md`
+- `docs/escalation/escalation_quality_metrics.md`
+- `docs/metrics/csat_metrics_framework.md`
+- `docs/metrics/dashboard_wireframes.md`
+- `docs/system-prompt/prompt_architecture.md`
+- `docs/system-prompt/prompt_templates.md`
+
+### Next Phase Plan
+- Phase 4: Finalization & Submission (Days 14-15).
+
+---
+
 ## Day 11 — Continuous Learning Pipeline & A/B Testing
 **Date:** 2026-06-05
 **Focus:** Feedback integration, model update strategy, and safety preservation.
