@@ -1,0 +1,1607 @@
+[
+  {
+    "document": {
+      "doc_id": "692435c9-062e-41ed-aa1d-d55fd0a55935",
+      "title": "Customer Dispute Resolution Policy - Section 1",
+      "category": "Policy",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "AUTH_CUSTOMER",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "06869a10-f28a-4bd7-ac19-b804bf197314",
+      "doc_id": "692435c9-062e-41ed-aa1d-d55fd0a55935",
+      "content": "Steps to file a dispute for a fraudulent transaction. This is chunk 1 containing specific details for Customer Dispute Resolution Policy.",
+      "dense_vector": [
+        -0.5533,
+        -0.0193,
+        0.5693,
+        -0.5766,
+        0.9335
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "e3cb2747-c0ca-44cc-90cf-a3b494a53929",
+      "title": "Fixed Deposit Rates 2026 - Section 2",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "4385190c-9193-447b-be0e-489e4dfab58f",
+      "doc_id": "e3cb2747-c0ca-44cc-90cf-a3b494a53929",
+      "content": "Current FD interest rates up to 7.5% for seniors. This is chunk 2 containing specific details for Fixed Deposit Rates 2026.",
+      "dense_vector": [
+        -0.9177,
+        -0.0212,
+        0.9104,
+        -0.1204,
+        0.5891
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "d71ae769-1ed7-4c7b-9778-2d2e83867268",
+      "title": "NexBank Premium Savings - Section 3",
+      "category": "Account Details",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "1375fefe-dc73-430e-8ee0-c0ffa670211d",
+      "doc_id": "d71ae769-1ed7-4c7b-9778-2d2e83867268",
+      "content": "Features for premium savings with higher interest rates. This is chunk 3 containing specific details for NexBank Premium Savings.",
+      "dense_vector": [
+        0.3036,
+        0.8825,
+        -0.9868,
+        -0.5094,
+        0.1059
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "986df941-c2e2-45f1-8fb8-4c925c12771b",
+      "title": "Fixed Deposit Rates 2026 - Section 4",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "6c751a7f-4b55-4d7a-96c2-2d09df6c8951",
+      "doc_id": "986df941-c2e2-45f1-8fb8-4c925c12771b",
+      "content": "Current FD interest rates up to 7.5% for seniors. This is chunk 4 containing specific details for Fixed Deposit Rates 2026.",
+      "dense_vector": [
+        0.1191,
+        0.7934,
+        0.9314,
+        -0.3557,
+        0.9213
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "94ba34e7-5834-40f3-a857-16f2f8ef3b93",
+      "title": "Branch ATM Cash Withdrawal Limits - Section 5",
+      "category": "Policy",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "d1856b5b-a0ff-43ce-9aff-3bc4120c9708",
+      "doc_id": "94ba34e7-5834-40f3-a857-16f2f8ef3b93",
+      "content": "Daily cash withdrawal limits at NexBank ATMs. This is chunk 5 containing specific details for Branch ATM Cash Withdrawal Limits.",
+      "dense_vector": [
+        -0.1282,
+        -0.7412,
+        -0.0769,
+        -0.7061,
+        -0.1161
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "8d90cb46-77bd-463d-b3c6-e81a20a4e804",
+      "title": "Customer Dispute Resolution Policy - Section 6",
+      "category": "Policy",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "AUTH_CUSTOMER",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "d997853c-a8d0-4867-95bc-503a0ca909c4",
+      "doc_id": "8d90cb46-77bd-463d-b3c6-e81a20a4e804",
+      "content": "Steps to file a dispute for a fraudulent transaction. This is chunk 6 containing specific details for Customer Dispute Resolution Policy.",
+      "dense_vector": [
+        0.3224,
+        -0.3906,
+        0.9661,
+        -0.4146,
+        -0.6537
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "dd9a3100-da3a-46c2-8e43-b738439fd914",
+      "title": "Branch ATM Cash Withdrawal Limits - Section 7",
+      "category": "Policy",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "38cc9a41-03c8-4732-a789-757a5eef6e04",
+      "doc_id": "dd9a3100-da3a-46c2-8e43-b738439fd914",
+      "content": "Daily cash withdrawal limits at NexBank ATMs. This is chunk 7 containing specific details for Branch ATM Cash Withdrawal Limits.",
+      "dense_vector": [
+        0.7492,
+        -0.8554,
+        -0.1773,
+        0.6434,
+        0.8018
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "fc8ca021-e3ff-4bbd-b7f6-831e68fccbd2",
+      "title": "Credit Card Fees and Charges - Section 8",
+      "category": "Fee Schedule",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "f3c2fb2f-f4d9-484d-a3a2-c3ef8d714a25",
+      "doc_id": "fc8ca021-e3ff-4bbd-b7f6-831e68fccbd2",
+      "content": "Annual fees and late payment charges for all credit cards. This is chunk 8 containing specific details for Credit Card Fees and Charges.",
+      "dense_vector": [
+        0.3739,
+        -0.9206,
+        0.3224,
+        0.0098,
+        0.7652
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "df35172e-ba94-45cf-b836-b4d2a8002e10",
+      "title": "NexBank Savings Account Features - Section 9",
+      "category": "Account Details",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "c83e9a4f-0928-4c95-b134-a54c14a03377",
+      "doc_id": "df35172e-ba94-45cf-b836-b4d2a8002e10",
+      "content": "General features of the standard savings account. This is chunk 9 containing specific details for NexBank Savings Account Features.",
+      "dense_vector": [
+        0.0304,
+        -0.0602,
+        0.7959,
+        -0.9891,
+        -0.0143
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "65afd0be-ad22-4acf-a654-e6f368afb1e7",
+      "title": "NEFT/RTGS Transfer Limits - Section 10",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "f220a25a-3bbb-4ec9-b152-76aa8bd47231",
+      "doc_id": "65afd0be-ad22-4acf-a654-e6f368afb1e7",
+      "content": "Limits on NEFT and RTGS daily transfers. This is chunk 10 containing specific details for NEFT/RTGS Transfer Limits.",
+      "dense_vector": [
+        -0.4805,
+        0.0378,
+        0.8174,
+        -0.4168,
+        -0.8701
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "55636d3d-8159-4f48-acb1-0cd85f5e4847",
+      "title": "Wealth Management Services - Section 11",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "HNW_CLIENT",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "994633eb-2a1d-416f-a955-eab6e05da9d2",
+      "doc_id": "55636d3d-8159-4f48-acb1-0cd85f5e4847",
+      "content": "Dedicated RM services and investment portfolios for HNW clients. This is chunk 11 containing specific details for Wealth Management Services.",
+      "dense_vector": [
+        -0.1407,
+        -0.6662,
+        0.3333,
+        0.2579,
+        -0.2826
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "8f3fa0f6-b7c9-428e-bee0-79167a0f8ac8",
+      "title": "Wealth Management Services - Section 12",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "HNW_CLIENT",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "f8c84828-13f4-44f6-abd2-6f1259a9d50f",
+      "doc_id": "8f3fa0f6-b7c9-428e-bee0-79167a0f8ac8",
+      "content": "Dedicated RM services and investment portfolios for HNW clients. This is chunk 12 containing specific details for Wealth Management Services.",
+      "dense_vector": [
+        0.3941,
+        0.3708,
+        0.2985,
+        -0.5596,
+        0.1802
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "62f9fdca-9a01-4619-81fd-d2e3f916ba0d",
+      "title": "NexBank Savings Account Features - Section 13",
+      "category": "Account Details",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "82de78a1-6976-4664-965d-cc12bd84ee1d",
+      "doc_id": "62f9fdca-9a01-4619-81fd-d2e3f916ba0d",
+      "content": "General features of the standard savings account. This is chunk 13 containing specific details for NexBank Savings Account Features.",
+      "dense_vector": [
+        -0.831,
+        -0.199,
+        -0.6057,
+        0.0259,
+        0.9112
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "6a4f7939-52c3-458a-a56b-e3eb0a73c246",
+      "title": "NexBank Savings Account Features - Section 14",
+      "category": "Account Details",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "617d3f32-e314-48c5-ac4e-f964901a9f01",
+      "doc_id": "6a4f7939-52c3-458a-a56b-e3eb0a73c246",
+      "content": "General features of the standard savings account. This is chunk 14 containing specific details for NexBank Savings Account Features.",
+      "dense_vector": [
+        -0.571,
+        -0.4275,
+        -0.8023,
+        -0.0048,
+        0.161
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "36e736b9-9e63-4e15-be90-f0b51a81d044",
+      "title": "Home Loan Processing Guidelines - Section 15",
+      "category": "Loan Guidelines",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "AUTH_CUSTOMER",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "77de59c1-7203-4cbc-8d76-ec0379d2f9d8",
+      "doc_id": "36e736b9-9e63-4e15-be90-f0b51a81d044",
+      "content": "Internal steps and customer requirements for home loan processing. This is chunk 15 containing specific details for Home Loan Processing Guidelines.",
+      "dense_vector": [
+        0.0432,
+        -0.4748,
+        0.3683,
+        -0.6167,
+        0.024
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "91ab8ea8-849c-47ed-bea7-2159fdfec278",
+      "title": "Fixed Deposit Rates 2026 - Section 16",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "6af8de40-d0b3-48d0-925d-fa1287644f79",
+      "doc_id": "91ab8ea8-849c-47ed-bea7-2159fdfec278",
+      "content": "Current FD interest rates up to 7.5% for seniors. This is chunk 16 containing specific details for Fixed Deposit Rates 2026.",
+      "dense_vector": [
+        -0.0857,
+        0.1006,
+        0.0859,
+        -0.0757,
+        0.4687
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "3c650f3a-29c9-4f21-b747-8324a37d9821",
+      "title": "NEFT/RTGS Transfer Limits - Section 17",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "6b9462bc-a49c-40ce-86d6-d5e4478b357e",
+      "doc_id": "3c650f3a-29c9-4f21-b747-8324a37d9821",
+      "content": "Limits on NEFT and RTGS daily transfers. This is chunk 17 containing specific details for NEFT/RTGS Transfer Limits.",
+      "dense_vector": [
+        0.9771,
+        0.8436,
+        -0.9273,
+        -0.787,
+        0.0591
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "21f43e9a-3057-4424-b082-1952eac6a542",
+      "title": "NexBank Savings Account Features - Section 18",
+      "category": "Account Details",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "698b7a90-80a1-4618-a38e-b7c5d454b992",
+      "doc_id": "21f43e9a-3057-4424-b082-1952eac6a542",
+      "content": "General features of the standard savings account. This is chunk 18 containing specific details for NexBank Savings Account Features.",
+      "dense_vector": [
+        -0.2183,
+        -0.1293,
+        0.1856,
+        -0.2016,
+        0.7711
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "be87647a-9fc7-4890-ae1e-68f53b2ea37c",
+      "title": "Branch ATM Cash Withdrawal Limits - Section 19",
+      "category": "Policy",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "182a72b7-eb3d-46cc-a1be-e8a1c930c9e7",
+      "doc_id": "be87647a-9fc7-4890-ae1e-68f53b2ea37c",
+      "content": "Daily cash withdrawal limits at NexBank ATMs. This is chunk 19 containing specific details for Branch ATM Cash Withdrawal Limits.",
+      "dense_vector": [
+        0.9006,
+        0.1593,
+        0.6375,
+        -0.9359,
+        0.9028
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "d7ffe377-dad7-473d-95e2-cc39fda137f4",
+      "title": "Wealth Management Services - Section 20",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "HNW_CLIENT",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "ecfbbda2-1399-4b0e-b765-6eb61fa07e06",
+      "doc_id": "d7ffe377-dad7-473d-95e2-cc39fda137f4",
+      "content": "Dedicated RM services and investment portfolios for HNW clients. This is chunk 20 containing specific details for Wealth Management Services.",
+      "dense_vector": [
+        -0.072,
+        -0.5187,
+        0.0256,
+        -0.8248,
+        0.1811
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "e9f26af3-eb1e-43c8-8364-5a3f434e5051",
+      "title": "RBI Digital Lending Circular 2026 - Section 21",
+      "category": "Regulatory",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [
+        "rbi_circular_ref: RBI/2026-27/045"
+      ],
+      "acl": "INTERNAL_ONLY",
+      "authoring_dept": "Compliance"
+    },
+    "chunk": {
+      "chunk_id": "4cb8886f-6a91-42f7-8c70-db26d33b45f0",
+      "doc_id": "e9f26af3-eb1e-43c8-8364-5a3f434e5051",
+      "content": "RBI guidelines on digital lending practices. rbi_circular_ref: RBI/2026-27/045 This is chunk 21 containing specific details for RBI Digital Lending Circular 2026.",
+      "dense_vector": [
+        -0.2654,
+        -0.5398,
+        -0.8882,
+        -0.1457,
+        -0.5677
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "1d6c2064-47a4-497d-bb2f-052749b65382",
+      "title": "RBI Digital Lending Circular 2026 - Section 22",
+      "category": "Regulatory",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [
+        "rbi_circular_ref: RBI/2026-27/045"
+      ],
+      "acl": "INTERNAL_ONLY",
+      "authoring_dept": "Compliance"
+    },
+    "chunk": {
+      "chunk_id": "6d7976c3-1541-4915-9234-baa77a6667f9",
+      "doc_id": "1d6c2064-47a4-497d-bb2f-052749b65382",
+      "content": "RBI guidelines on digital lending practices. rbi_circular_ref: RBI/2026-27/045 This is chunk 22 containing specific details for RBI Digital Lending Circular 2026.",
+      "dense_vector": [
+        -0.9549,
+        0.1767,
+        -0.8618,
+        0.8881,
+        -0.8462
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "beaeb7c3-9fcc-42fe-81ff-3a0dc3ed6db8",
+      "title": "Wealth Management Services - Section 23",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "HNW_CLIENT",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "94519f38-12af-4b9b-857f-b1de715fad59",
+      "doc_id": "beaeb7c3-9fcc-42fe-81ff-3a0dc3ed6db8",
+      "content": "Dedicated RM services and investment portfolios for HNW clients. This is chunk 23 containing specific details for Wealth Management Services.",
+      "dense_vector": [
+        0.3524,
+        0.1819,
+        -0.314,
+        0.5586,
+        -0.1599
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "3fe9e2e9-b627-4939-aa0c-869a39f206c7",
+      "title": "RBI Digital Lending Circular 2026 - Section 24",
+      "category": "Regulatory",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [
+        "rbi_circular_ref: RBI/2026-27/045"
+      ],
+      "acl": "INTERNAL_ONLY",
+      "authoring_dept": "Compliance"
+    },
+    "chunk": {
+      "chunk_id": "08452819-921e-48b9-903e-3ecb7ed12365",
+      "doc_id": "3fe9e2e9-b627-4939-aa0c-869a39f206c7",
+      "content": "RBI guidelines on digital lending practices. rbi_circular_ref: RBI/2026-27/045 This is chunk 24 containing specific details for RBI Digital Lending Circular 2026.",
+      "dense_vector": [
+        0.1047,
+        0.4299,
+        0.0975,
+        -0.2909,
+        -0.0006
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "6e473f82-099b-435b-bcc7-b11e447981b5",
+      "title": "NexBank Savings Account Features - Section 25",
+      "category": "Account Details",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "6a5ab2ed-76e0-4cbb-9084-2bcfd34a6b95",
+      "doc_id": "6e473f82-099b-435b-bcc7-b11e447981b5",
+      "content": "General features of the standard savings account. This is chunk 25 containing specific details for NexBank Savings Account Features.",
+      "dense_vector": [
+        -0.5594,
+        0.492,
+        0.974,
+        0.3581,
+        0.8165
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "dde86250-de6a-4b87-9a24-1d792932775c",
+      "title": "Branch ATM Cash Withdrawal Limits - Section 26",
+      "category": "Policy",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "e9715dd3-b639-4323-a35e-e7b065ff1472",
+      "doc_id": "dde86250-de6a-4b87-9a24-1d792932775c",
+      "content": "Daily cash withdrawal limits at NexBank ATMs. This is chunk 26 containing specific details for Branch ATM Cash Withdrawal Limits.",
+      "dense_vector": [
+        0.2967,
+        -0.9433,
+        0.6049,
+        0.4934,
+        -0.2487
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "52d00f1e-f764-434c-8b42-95d8be935df9",
+      "title": "NexBank Savings Account Features - Section 27",
+      "category": "Account Details",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "f3edaf8f-19e7-4c10-bca7-60b700b0a3c1",
+      "doc_id": "52d00f1e-f764-434c-8b42-95d8be935df9",
+      "content": "General features of the standard savings account. This is chunk 27 containing specific details for NexBank Savings Account Features.",
+      "dense_vector": [
+        -0.3885,
+        0.0899,
+        -0.6831,
+        -0.0459,
+        0.6772
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "9944a2dc-d4f5-4a23-acfe-3e81268cb2b2",
+      "title": "Wealth Management Services - Section 28",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "HNW_CLIENT",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "a8cc6c7c-94a6-4d0b-965b-78f03b314d7c",
+      "doc_id": "9944a2dc-d4f5-4a23-acfe-3e81268cb2b2",
+      "content": "Dedicated RM services and investment portfolios for HNW clients. This is chunk 28 containing specific details for Wealth Management Services.",
+      "dense_vector": [
+        -0.5874,
+        -0.9969,
+        0.1634,
+        -0.9517,
+        -0.2072
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "ed224937-182f-42dd-a789-0dc55b3870b6",
+      "title": "NEFT/RTGS Transfer Limits - Section 29",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "2254a06d-ff22-40fe-93b8-48f10ab4b238",
+      "doc_id": "ed224937-182f-42dd-a789-0dc55b3870b6",
+      "content": "Limits on NEFT and RTGS daily transfers. This is chunk 29 containing specific details for NEFT/RTGS Transfer Limits.",
+      "dense_vector": [
+        0.3552,
+        -0.037,
+        0.7985,
+        -0.6015,
+        -0.5319
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "47ecf9c9-0e71-4452-8230-164c5a3b6dfd",
+      "title": "Home Loan Processing Guidelines - Section 30",
+      "category": "Loan Guidelines",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "AUTH_CUSTOMER",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "604769e3-9fd5-4c08-852a-a29f7d706703",
+      "doc_id": "47ecf9c9-0e71-4452-8230-164c5a3b6dfd",
+      "content": "Internal steps and customer requirements for home loan processing. This is chunk 30 containing specific details for Home Loan Processing Guidelines.",
+      "dense_vector": [
+        -0.6548,
+        -0.2159,
+        -0.2022,
+        0.5559,
+        0.9338
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "542021a9-4a97-44d3-85e8-e5f4af82c7f7",
+      "title": "NexBank Premium Savings - Section 31",
+      "category": "Account Details",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "c30e271f-46d5-4f5a-8dbb-f9c2694d9f84",
+      "doc_id": "542021a9-4a97-44d3-85e8-e5f4af82c7f7",
+      "content": "Features for premium savings with higher interest rates. This is chunk 31 containing specific details for NexBank Premium Savings.",
+      "dense_vector": [
+        0.6715,
+        0.8355,
+        0.2545,
+        0.626,
+        -0.5141
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "55a1d048-5b24-4919-b54b-1a70e419f480",
+      "title": "Home Loan Processing Guidelines - Section 32",
+      "category": "Loan Guidelines",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "AUTH_CUSTOMER",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "c7a4f0b4-1825-4373-a7e4-a133183c8532",
+      "doc_id": "55a1d048-5b24-4919-b54b-1a70e419f480",
+      "content": "Internal steps and customer requirements for home loan processing. This is chunk 32 containing specific details for Home Loan Processing Guidelines.",
+      "dense_vector": [
+        -0.5434,
+        -0.8839,
+        0.4567,
+        0.8601,
+        0.5178
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "f81c352c-eab6-4c67-a977-4aa1fff86a3f",
+      "title": "NexBank Savings Account Features - Section 33",
+      "category": "Account Details",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "25f3bf1c-37a5-4bb2-a7a3-71cddbaf85cc",
+      "doc_id": "f81c352c-eab6-4c67-a977-4aa1fff86a3f",
+      "content": "General features of the standard savings account. This is chunk 33 containing specific details for NexBank Savings Account Features.",
+      "dense_vector": [
+        -0.1604,
+        0.2539,
+        -0.1269,
+        -0.7771,
+        -0.9627
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "4110b057-55b2-493a-b473-e36c8a92eb57",
+      "title": "NEFT/RTGS Transfer Limits - Section 34",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "d7cb09b0-3a6d-46d6-bf1f-71da53bf938c",
+      "doc_id": "4110b057-55b2-493a-b473-e36c8a92eb57",
+      "content": "Limits on NEFT and RTGS daily transfers. This is chunk 34 containing specific details for NEFT/RTGS Transfer Limits.",
+      "dense_vector": [
+        0.4287,
+        0.5852,
+        -0.5455,
+        -0.6459,
+        -0.1538
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "338466d1-55f8-4906-b2d0-ace9e1f67542",
+      "title": "NexBank Premium Savings - Section 35",
+      "category": "Account Details",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "8b7a0b22-eed4-4dd9-a056-9d10b2d7298d",
+      "doc_id": "338466d1-55f8-4906-b2d0-ace9e1f67542",
+      "content": "Features for premium savings with higher interest rates. This is chunk 35 containing specific details for NexBank Premium Savings.",
+      "dense_vector": [
+        -0.8276,
+        0.5283,
+        -0.5711,
+        -0.8884,
+        0.2401
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "8da2f6b2-ece1-4e46-85f1-55d5a83608f4",
+      "title": "Credit Card Fees and Charges - Section 36",
+      "category": "Fee Schedule",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "8b6034bd-3474-4b7a-a209-4707acce3c43",
+      "doc_id": "8da2f6b2-ece1-4e46-85f1-55d5a83608f4",
+      "content": "Annual fees and late payment charges for all credit cards. This is chunk 36 containing specific details for Credit Card Fees and Charges.",
+      "dense_vector": [
+        0.9066,
+        0.2301,
+        0.9682,
+        -0.5029,
+        -0.1462
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "f0120bba-aa67-4ef8-9f32-ab610c987865",
+      "title": "Home Loan Processing Guidelines - Section 37",
+      "category": "Loan Guidelines",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "AUTH_CUSTOMER",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "18154dd7-5b86-405f-a984-640d6be7c183",
+      "doc_id": "f0120bba-aa67-4ef8-9f32-ab610c987865",
+      "content": "Internal steps and customer requirements for home loan processing. This is chunk 37 containing specific details for Home Loan Processing Guidelines.",
+      "dense_vector": [
+        -0.6866,
+        0.6003,
+        0.3712,
+        -0.982,
+        0.6414
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "a8284441-01d9-46e0-a752-2154e63f11ca",
+      "title": "Wealth Management Services - Section 38",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "HNW_CLIENT",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "47e50681-0fab-4b92-acc3-bbb821340d7d",
+      "doc_id": "a8284441-01d9-46e0-a752-2154e63f11ca",
+      "content": "Dedicated RM services and investment portfolios for HNW clients. This is chunk 38 containing specific details for Wealth Management Services.",
+      "dense_vector": [
+        0.2015,
+        0.1943,
+        0.3182,
+        0.0302,
+        -0.9268
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "9caf17d3-90aa-441a-8da7-6a44d11cefcc",
+      "title": "NEFT/RTGS Transfer Limits - Section 39",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "346b4734-1f42-4ed6-ba3e-50b7a5cbc352",
+      "doc_id": "9caf17d3-90aa-441a-8da7-6a44d11cefcc",
+      "content": "Limits on NEFT and RTGS daily transfers. This is chunk 39 containing specific details for NEFT/RTGS Transfer Limits.",
+      "dense_vector": [
+        -0.353,
+        0.3405,
+        0.8235,
+        0.7279,
+        -0.4649
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "92aa0b11-2e9d-41ce-bacc-8d30e72d5784",
+      "title": "RBI Digital Lending Circular 2026 - Section 40",
+      "category": "Regulatory",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [
+        "rbi_circular_ref: RBI/2026-27/045"
+      ],
+      "acl": "INTERNAL_ONLY",
+      "authoring_dept": "Compliance"
+    },
+    "chunk": {
+      "chunk_id": "1fd43dc8-92fb-41d3-8187-2c158b8df084",
+      "doc_id": "92aa0b11-2e9d-41ce-bacc-8d30e72d5784",
+      "content": "RBI guidelines on digital lending practices. rbi_circular_ref: RBI/2026-27/045 This is chunk 40 containing specific details for RBI Digital Lending Circular 2026.",
+      "dense_vector": [
+        0.0262,
+        -0.4184,
+        0.3576,
+        0.4412,
+        -0.8948
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "5094731e-2c25-4df4-bf7f-bd780a4c6386",
+      "title": "Home Loan Processing Guidelines - Section 41",
+      "category": "Loan Guidelines",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "AUTH_CUSTOMER",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "4fdf607c-05a6-4f01-ae9f-35d4caf3b413",
+      "doc_id": "5094731e-2c25-4df4-bf7f-bd780a4c6386",
+      "content": "Internal steps and customer requirements for home loan processing. This is chunk 41 containing specific details for Home Loan Processing Guidelines.",
+      "dense_vector": [
+        0.3862,
+        -0.6957,
+        -0.5979,
+        -0.321,
+        0.5433
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "59db792e-6003-4e07-a36e-df78dc673f27",
+      "title": "NEFT/RTGS Transfer Limits - Section 42",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "07bb801e-b4f9-4f90-882f-c253b30a6ffe",
+      "doc_id": "59db792e-6003-4e07-a36e-df78dc673f27",
+      "content": "Limits on NEFT and RTGS daily transfers. This is chunk 42 containing specific details for NEFT/RTGS Transfer Limits.",
+      "dense_vector": [
+        0.3679,
+        -0.4408,
+        -0.3463,
+        0.778,
+        0.8579
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "a8249117-eb0a-467e-9d22-c1aa479e319a",
+      "title": "Credit Card Fees and Charges - Section 43",
+      "category": "Fee Schedule",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "eac2d86e-4d46-46fe-94f8-b89ffed9f60a",
+      "doc_id": "a8249117-eb0a-467e-9d22-c1aa479e319a",
+      "content": "Annual fees and late payment charges for all credit cards. This is chunk 43 containing specific details for Credit Card Fees and Charges.",
+      "dense_vector": [
+        0.1161,
+        0.8767,
+        0.0929,
+        0.4848,
+        0.3566
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "fa21758f-6dfd-4a58-98b3-a5d52e1112a8",
+      "title": "Branch ATM Cash Withdrawal Limits - Section 44",
+      "category": "Policy",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "88c785eb-b3ed-4d90-b54a-dce7f3bececa",
+      "doc_id": "fa21758f-6dfd-4a58-98b3-a5d52e1112a8",
+      "content": "Daily cash withdrawal limits at NexBank ATMs. This is chunk 44 containing specific details for Branch ATM Cash Withdrawal Limits.",
+      "dense_vector": [
+        0.9139,
+        -0.8907,
+        -0.0268,
+        0.669,
+        0.0278
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "7daa4623-0ee1-492a-a2a4-9176ca5dab36",
+      "title": "Customer Dispute Resolution Policy - Section 45",
+      "category": "Policy",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "AUTH_CUSTOMER",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "7b6ba774-441f-490e-98cc-54bf356acc38",
+      "doc_id": "7daa4623-0ee1-492a-a2a4-9176ca5dab36",
+      "content": "Steps to file a dispute for a fraudulent transaction. This is chunk 45 containing specific details for Customer Dispute Resolution Policy.",
+      "dense_vector": [
+        -0.6017,
+        -0.9601,
+        0.158,
+        0.8386,
+        0.4217
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "be07ff35-46fc-4aa1-b982-f49c3f6d1d73",
+      "title": "RBI Digital Lending Circular 2026 - Section 46",
+      "category": "Regulatory",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [
+        "rbi_circular_ref: RBI/2026-27/045"
+      ],
+      "acl": "INTERNAL_ONLY",
+      "authoring_dept": "Compliance"
+    },
+    "chunk": {
+      "chunk_id": "d1dd43c6-c11a-4665-805a-f1e49ef556ae",
+      "doc_id": "be07ff35-46fc-4aa1-b982-f49c3f6d1d73",
+      "content": "RBI guidelines on digital lending practices. rbi_circular_ref: RBI/2026-27/045 This is chunk 46 containing specific details for RBI Digital Lending Circular 2026.",
+      "dense_vector": [
+        -0.096,
+        0.8424,
+        0.8996,
+        0.807,
+        -0.4904
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "4ce048d8-8048-48ae-8fe0-7feebf473b8c",
+      "title": "NEFT/RTGS Transfer Limits - Section 47",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "2ff0f2e9-d0c8-4c90-b59c-07945a0b48ba",
+      "doc_id": "4ce048d8-8048-48ae-8fe0-7feebf473b8c",
+      "content": "Limits on NEFT and RTGS daily transfers. This is chunk 47 containing specific details for NEFT/RTGS Transfer Limits.",
+      "dense_vector": [
+        0.6719,
+        -0.4577,
+        -0.0915,
+        -0.269,
+        -0.9257
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "0a723c18-48fb-4ae8-8a36-91a6a40b09f1",
+      "title": "Branch ATM Cash Withdrawal Limits - Section 48",
+      "category": "Policy",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "3650f4b3-4e4f-442c-9e85-35a369fcf071",
+      "doc_id": "0a723c18-48fb-4ae8-8a36-91a6a40b09f1",
+      "content": "Daily cash withdrawal limits at NexBank ATMs. This is chunk 48 containing specific details for Branch ATM Cash Withdrawal Limits.",
+      "dense_vector": [
+        -0.4428,
+        0.8294,
+        0.325,
+        0.4256,
+        -0.3792
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "1b4549f2-4c20-4f0e-bed7-90652f7308a1",
+      "title": "NEFT/RTGS Transfer Limits - Section 49",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "5a6276af-61ea-4e8e-aac3-522b85f6eabf",
+      "doc_id": "1b4549f2-4c20-4f0e-bed7-90652f7308a1",
+      "content": "Limits on NEFT and RTGS daily transfers. This is chunk 49 containing specific details for NEFT/RTGS Transfer Limits.",
+      "dense_vector": [
+        0.4617,
+        -0.5449,
+        -0.829,
+        -0.3404,
+        0.4614
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "b89691cc-3052-420c-9627-5045c4ad4ea4",
+      "title": "NEFT/RTGS Transfer Limits - Section 50",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "c1738133-5b01-4ca7-9ab3-3fa1e1ebfa0f",
+      "doc_id": "b89691cc-3052-420c-9627-5045c4ad4ea4",
+      "content": "Limits on NEFT and RTGS daily transfers. This is chunk 50 containing specific details for NEFT/RTGS Transfer Limits.",
+      "dense_vector": [
+        0.8438,
+        -0.4066,
+        0.3285,
+        0.0932,
+        -0.1039
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "930de70c-2c36-4aae-82b4-5755ab8b8268",
+      "title": "Fixed Deposit Rates 2026 - Section 51",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "2b670f45-6f19-47f3-afde-c464bad35250",
+      "doc_id": "930de70c-2c36-4aae-82b4-5755ab8b8268",
+      "content": "Current FD interest rates up to 7.5% for seniors. This is chunk 51 containing specific details for Fixed Deposit Rates 2026.",
+      "dense_vector": [
+        -0.2352,
+        0.0436,
+        0.7461,
+        0.2295,
+        0.2545
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "5871a5b6-dcb5-45e1-86cc-823a7cfa29a6",
+      "title": "Wealth Management Services - Section 52",
+      "category": "Product Info",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "HNW_CLIENT",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "1e49152d-1f12-4b97-9a71-7f1b3b2dfbad",
+      "doc_id": "5871a5b6-dcb5-45e1-86cc-823a7cfa29a6",
+      "content": "Dedicated RM services and investment portfolios for HNW clients. This is chunk 52 containing specific details for Wealth Management Services.",
+      "dense_vector": [
+        0.3374,
+        0.7095,
+        0.559,
+        -0.4236,
+        0.2567
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "011d41de-2da8-49a4-a479-683db9c585ae",
+      "title": "Credit Card Fees and Charges - Section 53",
+      "category": "Fee Schedule",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "12955697-a4a8-4cf7-b970-878d2641a954",
+      "doc_id": "011d41de-2da8-49a4-a479-683db9c585ae",
+      "content": "Annual fees and late payment charges for all credit cards. This is chunk 53 containing specific details for Credit Card Fees and Charges.",
+      "dense_vector": [
+        -0.2313,
+        -0.2897,
+        -0.1993,
+        0.5151,
+        0.0198
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "9cc3c137-b112-4172-bb6c-331f46fdf5fd",
+      "title": "NexBank Premium Savings - Section 54",
+      "category": "Account Details",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "db26f8b6-de61-423c-8242-b981c2ccc208",
+      "doc_id": "9cc3c137-b112-4172-bb6c-331f46fdf5fd",
+      "content": "Features for premium savings with higher interest rates. This is chunk 54 containing specific details for NexBank Premium Savings.",
+      "dense_vector": [
+        -0.7332,
+        0.0218,
+        0.2376,
+        0.1224,
+        0.4389
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  },
+  {
+    "document": {
+      "doc_id": "bbf5f6b9-f712-4ad9-a2df-5d04c62de6a7",
+      "title": "NexBank Savings Account Features - Section 55",
+      "category": "Account Details",
+      "version": "v1.0",
+      "publication_date": "2026-06-01T00:00:00Z",
+      "compliance_tags": [],
+      "acl": "PUBLIC",
+      "authoring_dept": "Retail Banking"
+    },
+    "chunk": {
+      "chunk_id": "a3baaa27-7b61-4535-82e3-ca260e6d5ab5",
+      "doc_id": "bbf5f6b9-f712-4ad9-a2df-5d04c62de6a7",
+      "content": "General features of the standard savings account. This is chunk 55 containing specific details for NexBank Savings Account Features.",
+      "dense_vector": [
+        -0.2941,
+        -0.7963,
+        -0.3382,
+        -0.2498,
+        -0.6731
+      ],
+      "sparse_vector": {
+        "nexbank": 1.2,
+        "account": 0.8
+      },
+      "chunk_index": 1
+    }
+  }
+]

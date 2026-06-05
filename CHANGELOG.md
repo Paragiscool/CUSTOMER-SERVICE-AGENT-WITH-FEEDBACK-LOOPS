@@ -1,5 +1,78 @@
 # Project Changelog
 
+## Day 11 — Continuous Learning Pipeline & A/B Testing
+**Date:** 2026-06-05
+**Focus:** Feedback integration, model update strategy, and safety preservation.
+
+### Work Completed
+- Designed the **Closed-Loop Improvement Cycle** specifying a 5-stage pipeline for asynchronous LoRA/PEFT updates.
+- Detailed **Feedback Integration** strategies, capturing explicit CSAT and implicit behavioral metrics (resolution outcomes, repeat contacts).
+- Established the **Supervisor Correction Taxonomy** distinguishing between intent routing failures, entity extraction misses, and factual hallucinations.
+- Mandated the **Safety Invariant Testing Protocol**, establishing an immutable safety layer and a 200-case "Air Gap" suite that automatically blocks non-compliant updates.
+- Developed an interactive **A/B Deployment Simulator** using D3.js to visualize Shadow Mode, Canary Releases, and the non-negotiable Auto-Rollback mechanism.
+
+### Deliverables Produced
+- `docs/learning-pipeline/learning_architecture.md`
+- `docs/learning-pipeline/feedback_integration.md`
+- `docs/learning-pipeline/safety_invariant_protocol.md`
+- `simulations/ab_deployment_simulator.html`
+
+### Next Phase Plan
+- Phase 3 (continued): Escalation, Satisfaction & System Prompt Design (Days 12-13).
+
+---
+
+## Days 9-10 — Guardrail & Safety Specification
+**Date:** 2026-06-05
+**Focus:** Financial advice boundaries, security boundaries, and adversarial robustness.
+
+### Work Completed
+- Defined strict **Financial Advice Boundaries** outlining permissible information vs. prohibited subjective advice, enforced via a 3-Layer Safety Guard.
+- Designed defenses for **6 Adversarial Vectors** (Direct Injection, RAG Poisoning, Data Extraction, Social Engineering, Token Obfuscation, DoS) utilizing a Sandwich Architecture.
+- Outlined **8 Mandatory Account Security Guardrails** including step-up MFA, device fingerprinting anomaly detection, and concurrent session invalidation.
+- Mapped technical controls to **Regulatory Compliance** frameworks (RBI Digital Lending, PCI DSS, DPDP Act, KYC/AML).
+- Authored the **Guardrail Incident Response Playbook** detailing containment and remediation steps for boundary breaches.
+- Designed a **Monitoring Dashboard** spec focusing on false positive analysis and real-time injection attempt tracking.
+- Generated **60 Adversarial Test Cases** validating system deflection mechanisms.
+
+### Deliverables Produced
+- `docs/guardrails/financial_advice_boundaries.md`
+- `docs/guardrails/adversarial_defenses.md`
+- `docs/guardrails/account_security_guardrails.md`
+- `docs/guardrails/regulatory_compliance.md`
+- `docs/guardrails/incident_response_playbook.md`
+- `docs/guardrails/monitoring_dashboard.md`
+- `tests/adversarial_test_cases.json`
+
+### Next Phase Plan
+- Phase 3: Continuous Learning Pipeline & A/B Testing (Day 11).
+
+---
+
+## Days 7-8 — Knowledge Base & Retrieval Architecture
+**Date:** 2026-06-05
+**Focus:** KB schema, retrieval pipeline, and regulatory knowledge management.
+
+### Work Completed
+- Designed **Dual-Representation Schema** (Document & Chunk layers) mapping unstructured text into 200-300 token chunks with dense/sparse vectors.
+- Architected the **Hybrid Retrieval Pipeline** utilizing Reciprocal Rank Fusion (RRF, $k=60$) to merge BM25 and Dense Vector search results.
+- Defined **Confidence Scoring Thresholds** with a strict $\tau_{re-rank}$ to suppress hallucinated LLM generation if confidence is low.
+- Established **Access Control Matrix** mapped to authentication levels, and a pre-retrieval **PII Ingestion Gate** (Aadhaar/PAN scrubbing).
+- Outlined deterministic **Regulatory Maintenance Workflows** for RBI circulars, including staging/production environments and supervisor sign-offs.
+- Generated **55 sample Knowledge Base entries** mimicking structured product details and unstructured regulatory texts.
+
+### Deliverables Produced
+- `docs/knowledge-base/kb_schema.md`
+- `docs/knowledge-base/retrieval_pipeline.md`
+- `docs/knowledge-base/security_matrix.md`
+- `docs/knowledge-base/knowledge_maintenance.md`
+- `config/sample_kb_entries.json`
+
+### Next Phase Plan
+- Phase 2 (continued): Guardrail & Safety Specification (Days 9-10).
+
+---
+
 ## Days 4-6 — Intent Taxonomy & NLU Pipeline Design
 **Date:** 2026-06-04
 **Focus:** Complete intent classification, entity extraction, and disambiguation.

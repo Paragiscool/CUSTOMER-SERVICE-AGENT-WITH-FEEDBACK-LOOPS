@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A/B Deployment Simulator</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 { color: #ffffff; font-weight: 500; }
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            width: 100%;
+            max-width: 1000px;
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+        .controls {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        label { font-size: 14px; color: #a0a0a0; }
+        input[type=range] {
+            width: 100%;
+            cursor: pointer;
+        }
+        .value-display { font-weight: bold; color: #00d2ff; }
+        .viz-container {
+            flex: 2;
+            min-width: 500px;
+            position: relative;
+            background-color: #252526;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #alert-box {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ff3b30;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 10;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(255, 59, 48, 0.4);
+        }
+        .node text {
+            font-size: 14px;
+            font-weight: 500;
+            fill: #ffffff;
+            pointer-events: none;
+        }
+        .metrics-panel {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            justify-content: space-around;
+        }
+        .metric-card {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 6px;
+            flex: 1;
+        }
+        .metric-title { font-size: 12px; color: #aaa; text-transform: uppercase; }
+        .metric-value { font-size: 24px; font-weight: bold; margin-top: 5px; }
+        .control-color { color: #34c759; }
+        .variant-color { color: #00d2ff; }
+    </style>
+</head>
+<body>
+
+    <h1>Continuous Learning A/B Deployment Simulator</h1>
+    
+    <div class="dashboard">
+        <div class="controls">
+            <div class="control-group">
+                <label>Traffic Allocation (Variant %)</label>
+                <input type="range" id="trafficSlider" min="0" max="100" value="50">
+                <div style="display:flex; justify-content:space-between;">
+                    <span style="font-size:12px;">Control: <span id="valControlTraffic" class="control-color">50%</span></span>
+                    <span style="font-size:12px;">Variant: <span id="valVariantTraffic" class="variant-color value-display">50%</span></span>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label>Variant Performance (CSAT Impact %)</label>
+                <input type="range" id="perfSlider" min="-10" max="10" step="0.1" value="2.0">
+                <span id="valPerf" class="value-display">+2.0%</span>
+            </div>
+            
+            <div class="control-group">
+                <label>Auto-Rollback Threshold (CSAT Drop %)</label>
+                <input type="range" id="thresholdSlider" min="-10" max="0" step="0.1" value="-3.0">
+                <span id="valThreshold" style="color: #ff3b30; font-weight:bold;">-3.0%</span>
+            </div>
+
+            <div class="metrics-panel">
+                <div class="metric-card">
+                    <div class="metric-title">Control CSAT</div>
+                    <div class="metric-value control-color">85.0%</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-title">Variant CSAT</div>
+                    <div class="metric-value variant-color" id="variantCsatMetric">87.0%</div>
+                </div>
+            </div>
+            <p style="font-size:12px; color:#888; margin-top: 10px;">
+                Simulates real-time traffic splitting. If Variant CSAT drops below the threshold relative to Control, an automated rollback is triggered.
+            </p>
+        </div>
+
+        <div class="viz-container">
+            <div id="alert-box">CRITICAL: Auto-Rollback Triggered<br><span style="font-size:12px; font-weight:normal;">Variant performance breached threshold. Routing 100% traffic to Control.</span></div>
+            <svg id="canvas" width="500" height="400"></svg>
+        </div>
+    </div>
+
+<script>
+    const svg = d3.select("#canvas");
+    const width = 500;
+    const height = 400;
+
+    let variantTraffic = 50;
+    let variantPerf = 2.0;
+    let rollbackThreshold = -3.0;
+    const baseCsat = 85.0;
+    let isRollback = false;
+
+    // Nodes
+    const nodes = [
+        { id: "gateway", label: "Gateway Router", x: 50, y: 200, color: "#444" },
+        { id: "control", label: "Control Model (v1.0)", x: 350, y: 100, color: "#34c759" },
+        { id: "variant", label: "Variant Model (v1.1)", x: 350, y: 300, color: "#00d2ff" }
+    ];
+
+    svg.selectAll(".link")
+        .data([ {source: nodes[0], target: nodes[1], id: "link-control"}, {source: nodes[0], target: nodes[2], id: "link-variant"} ])
+        .enter().append("path")
+        .attr("class", "link")
+        .attr("id", d => d.id)
+        .attr("d", d => `M ${d.source.x+20} ${d.source.y} C ${(d.source.x + d.target.x)/2} ${d.source.y}, ${(d.source.x + d.target.x)/2} ${d.target.y}, ${d.target.x-70} ${d.target.y}`)
+        .attr("fill", "none")
+        .attr("stroke", "#333")
+        .attr("stroke-width", 20);
+
+    const nodeElements = svg.selectAll(".node")
+        .data(nodes)
+        .enter().append("g")
+        .attr("class", "node")
+        .attr("transform", d => `translate(${d.x},${d.y})`);
+
+    nodeElements.append("rect")
+        .attr("x", d => d.id === "gateway" ? -20 : -70)
+        .attr("y", -30)
+        .attr("width", d => d.id === "gateway" ? 40 : 140)
+        .attr("height", 60)
+        .attr("rx", 6)
+        .attr("fill", d => d.color)
+        .attr("stroke", "#111")
+        .attr("stroke-width", 2);
+
+    nodeElements.append("text")
+        .attr("dy", 5)
+        .attr("text-anchor", "middle")
+        .text(d => d.label);
+
+    // Particle simulation for traffic
+    const particles = [];
+    setInterval(() => {
+        if(Math.random() < 0.5) {
+            const target = (Math.random() * 100 < (isRollback ? 0 : variantTraffic)) ? "variant" : "control";
+            createParticle(target);
+        }
+    }, 50);
+
+    function createParticle(targetType) {
+        const pathNode = document.getElementById(`link-${targetType}`);
+        const l = pathNode.getTotalLength();
+        
+        const p = svg.append("circle")
+            .attr("r", 4)
+            .attr("fill", targetType === "control" ? "#34c759" : "#00d2ff")
+            .attr("opacity", 0.8);
+
+        p.transition()
+            .duration(1500 + Math.random()*500)
+            .ease(d3.easeLinear)
+            .attrTween("transform", function() {
+                return function(t) {
+                    const p = pathNode.getPointAtLength(t * l);
+                    return `translate(${p.x},${p.y})`;
+                }
+            })
+            .on("end", function() { d3.select(this).remove(); });
+    }
+
+    function updateState() {
+        const currentCsat = baseCsat + variantPerf;
+        document.getElementById("variantCsatMetric").textContent = currentCsat.toFixed(1) + "%";
+        
+        if (variantPerf <= rollbackThreshold) {
+            isRollback = true;
+            document.getElementById("alert-box").style.opacity = 1;
+            svg.select("#link-variant").attr("stroke", "#ff3b30");
+            document.getElementById("valVariantTraffic").textContent = "0% (ROLLED BACK)";
+            document.getElementById("valVariantTraffic").style.color = "#ff3b30";
+            document.getElementById("valControlTraffic").textContent = "100%";
+        } else {
+            isRollback = false;
+            document.getElementById("alert-box").style.opacity = 0;
+            svg.select("#link-variant").attr("stroke", "#333");
+            document.getElementById("valVariantTraffic").textContent = variantTraffic + "%";
+            document.getElementById("valVariantTraffic").style.color = "#00d2ff";
+            document.getElementById("valControlTraffic").textContent = (100 - variantTraffic) + "%";
+        }
+    }
+
+    document.getElementById("trafficSlider").addEventListener("input", (e) => {
+        if(!isRollback) variantTraffic = parseInt(e.target.value);
+        updateState();
+    });
+
+    document.getElementById("perfSlider").addEventListener("input", (e) => {
+        variantPerf = parseFloat(e.target.value);
+        document.getElementById("valPerf").textContent = (variantPerf > 0 ? "+" : "") + variantPerf.toFixed(1) + "%";
+        if(variantPerf < 0) document.getElementById("valPerf").style.color = "#ff3b30";
+        else document.getElementById("valPerf").style.color = "#00d2ff";
+        updateState();
+    });
+
+    document.getElementById("thresholdSlider").addEventListener("input", (e) => {
+        rollbackThreshold = parseFloat(e.target.value);
+        document.getElementById("valThreshold").textContent = rollbackThreshold.toFixed(1) + "%";
+        updateState();
+    });
+
+    updateState();
+
+</script>
+</body>
+</html>
