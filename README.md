@@ -85,22 +85,20 @@ This hyperlinked map outlines the complete architectural specification.
 │   ├── metrics/
 │   │   ├── [csat_metrics_framework.md](docs/metrics/csat_metrics_framework.md)       # 20 Leading, Lagging, and Operational KPIs driving system health.
 │   │   └── [dashboard_wireframes.md](docs/metrics/dashboard_wireframes.md)         # Visual layouts for Real-time, Daily Performance, and Weekly Strategy.
-│   ├── system-prompt/
-│   │   ├── [prompt_architecture.md](docs/system-prompt/prompt_architecture.md)          # 6-layer architecture separating mutable dialogue from immutable safety rules.
-│   │   └── [prompt_templates.md](docs/system-prompt/prompt_templates.md)             # 16 contextual templates covering disambiguation, deflections, and crises.
-│   ├── compliance/
-│   │   ├── [audit_logging_spec.md](docs/compliance/audit_logging_spec.md)           # AES-256 schemas enforcing 7-year WORM retention on Turn & Session logs.
-│   │   └── [risk_assessment_matrix.md](docs/compliance/risk_assessment_matrix.md)       # 13 Technical, Business, and Ethical risks paired with architectural mitigations.
-│   └── conversations/
-│       ├── [design_patterns.md](docs/conversations/design_patterns.md)              # 5 mandatory conversational UX patterns and 8 strictly prohibited anti-patterns.
-│       └── [sample_conversations.md](docs/conversations/sample_conversations.md)         # 21 multi-turn transcripts demonstrating guardrails and intent state-switching.
+│   └── compliance/
+│       ├── [audit_logging_spec.md](docs/compliance/audit_logging_spec.md)           # AES-256 schemas enforcing 7-year WORM retention on Turn & Session logs.
+│       └── [risk_assessment_matrix.md](docs/compliance/risk_assessment_matrix.md)       # 13 Technical, Business, and Ethical risks paired with architectural mitigations.
 ├── diagrams/
 │   └── [system_architecture.md](diagrams/system_architecture.md)              # Granular Mermaid.js flowcharts detailing topology, RAG, and State.
 ├── config/
 │   ├── [training_utterances.json](config/training_utterances.json)            # 370 raw customer queries labeled across the 37-intent taxonomy.
-│   └── [sample_kb_entries.json](config/sample_kb_entries.json)              # 55 chunked JSON documents representing products and RBI policies.
+│   ├── [sample_kb_entries.json](config/sample_kb_entries.json)              # 55 chunked JSON documents representing products and RBI policies.
+│   ├── [prompt_architecture.md](config/prompt_architecture.md)          # 6-layer architecture separating mutable dialogue from immutable safety rules.
+│   └── [prompt_templates.md](config/prompt_templates.md)             # 16 contextual templates covering disambiguation, deflections, and crises.
 ├── simulations/
-│   └── [ab_deployment_simulator.html](simulations/ab_deployment_simulator.html)        # Interactive D3.js visualization mapping Canary releases and rollbacks.
+│   ├── [ab_deployment_simulator.html](simulations/ab_deployment_simulator.html)        # Interactive D3.js visualization mapping Canary releases and rollbacks.
+│   ├── [design_patterns.md](simulations/design_patterns.md)              # 5 mandatory conversational UX patterns and 8 strictly prohibited anti-patterns.
+│   └── [sample_conversations.md](simulations/sample_conversations.md)         # 21 multi-turn transcripts demonstrating guardrails and intent state-switching.
 ├── tests/
 │   └── [adversarial_test_cases.json](tests/adversarial_test_cases.json)         # 60 red-team injection payloads designed to stress test the Sandwich Architecture.
 ├── [CHANGELOG.md](CHANGELOG.md)                            # The immutable daily development diary of all structural decisions.
